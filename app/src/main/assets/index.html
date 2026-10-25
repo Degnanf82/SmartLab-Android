@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07111f">
+<title>SmartLab 3-in-1</title>
+<style>
+:root{--bg:#07111f;--panel:#101d2e;--panel2:#14243a;--line:#263a52;--text:#eef6ff;--muted:#9bb0c8;--blue:#45b7ff;--cyan:#52e0d0;--orange:#ffbf69}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#102b47 0,#07111f 42%);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+header{padding:22px 18px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px} .brand{display:flex;gap:11px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#49c4ff,#1769dc);display:grid;place-items:center;font-weight:900;color:#04101e;font-size:19px;box-shadow:0 8px 28px #1476c655}.brand h1{font-size:18px;margin:0;letter-spacing:.3px}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px}.status{border:1px solid #38536c;background:#10253a;padding:8px 10px;border-radius:99px;color:#b8d8f5;font-size:11px;white-space:nowrap}
+main{max-width:760px;margin:auto;padding:0 14px 32px}.notice{border:1px solid #6b542e;background:#302516;color:#ffe0a8;border-radius:12px;padding:11px 13px;font-size:12px;line-height:1.45;margin:0 0 16px}
+.hero{background:linear-gradient(135deg,#13365a,#11243a 65%,#123b4b);border:1px solid #2c5678;border-radius:20px;padding:18px;margin-bottom:16px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#8bd8ff}.hero h2{margin:8px 0;font-size:25px;line-height:1.15}.hero p{color:#bed1e4;margin:0;font-size:13px;line-height:1.5}.hero-row{display:flex;justify-content:space-between;align-items:center;gap:12px}.pill{border:1px solid #37799e;background:#0e2d47;border-radius:10px;padding:8px 10px;font-size:11px;color:#bfeaff}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.module{background:linear-gradient(150deg,#13243a,#0e1b2c);border:1px solid var(--line);border-radius:17px;padding:15px;text-align:left;color:var(--text);min-height:139px;cursor:pointer}.module:active{transform:scale(.985)}.icon{width:38px;height:38px;border-radius:12px;background:#173b5a;display:grid;place-items:center;color:var(--blue);font-size:20px;margin-bottom:12px}.module h3{margin:0 0 5px;font-size:15px}.module p{margin:0;color:var(--muted);font-size:12px;line-height:1.4}.section-title{font-size:14px;margin:22px 2px 11px;color:#d6e6f8}.panel{background:#0e1b2c;border:1px solid var(--line);border-radius:17px;padding:16px;margin-top:14px}.panel h3{font-size:16px;margin:0 0 13px}.metric-row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.metric{background:#14263b;border-radius:12px;padding:12px}.metric small{display:block;color:var(--muted);font-size:11px}.metric strong{display:block;font-size:23px;margin-top:5px}.unit{font-size:12px;color:var(--cyan)}.button{border:1px solid #3375a2;background:#123b5d;color:#e8f7ff;border-radius:11px;padding:10px 13px;font-weight:650;cursor:pointer}.button.secondary{background:#152337;border-color:#33465c;color:#c8d7e8}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}label{display:block;color:var(--muted);font-size:12px;margin:12px 0 6px}input,select{width:100%;background:#081523;color:var(--text);border:1px solid #31475e;border-radius:10px;padding:11px;font:inherit}canvas{width:100%;height:180px;background:#071522;border:1px solid #243b52;border-radius:12px;display:block}.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.channel{background:#13253a;border:1px solid #2a4058;border-radius:10px;padding:11px 4px;text-align:center;font-size:12px}.channel b{display:block;color:var(--cyan);margin-bottom:5px}.hidden{display:none!important}.back{margin-bottom:12px}.footer{text-align:center;color:#7288a0;font-size:11px;padding:20px 0 4px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero h2{font-size:30px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="logo">SL</div><div><h1>SMARTLAB <span style="color:#65c9ff">3-IN-1</span></h1><p>Instrumentos electrónicos · prototipo móvil</p></div></div>
+ <div class="status">● DEMO OFFLINE</div>
+</header>
+<main>
+ <div class="notice">DEMO: las lecturas y gráficas son simuladas. Esta página aún no se conecta al hardware SmartLab ni sustituye un instrumento de medición.</div>
+ <section id="home">
+  <div class="hero"><div class="hero-row"><div><div class="eyebrow">SmartLab workspace</div><h2>Tu laboratorio,<br>en el bolsillo.</h2><p>Explora los módulos y prueba la interfaz en tu teléfono Android.</p></div><div class="pill">REV A · UI</div></div></div>
+  <div class="section-title">Instrumentos</div>
+  <div class="grid">
+   <button class="module" onclick="openModule('dmm')"><div class="icon">⌁</div><h3>Multímetro</h3><p>Voltaje, corriente, resistencia y continuidad</p></button>
+   <button class="module" onclick="openModule('scope')"><div class="icon">〰</div><h3>Osciloscopio</h3><p>Señal simulada, escala y captura</p></button>
+   <button class="module" onclick="openModule('gen')"><div class="icon">∿</div><h3>Generador</h3><p>Forma de onda y parámetros de salida</p></button>
+   <button class="module" onclick="openModule('logic')"><div class="icon">▥</div><h3>Analizador lógico</h3><p>8 canales digitales de demostración</p></button>
+   <button class="module" onclick="openModule('reports')"><div class="icon">▤</div><h3>Historial e informes</h3><p>Guardar notas y exportar informe de demo</p></button>
+   <button class="module" onclick="openModule('connect')"><div class="icon">⌁</div><h3>Conexión</h3><p>Estado de conectividad y hoja de ruta</p></button>
+  </div>
+  <div class="panel"><h3>Objetivos de diseño</h3><div class="metric-row"><div class="metric"><small>Osciloscopio</small><strong>10 <span class="unit">MHz</span></strong></div><div class="metric"><small>Analizador lógico</small><strong>8 <span class="unit">canales</span></strong></div><div class="metric"><small>Multímetro DC</small><strong>60 <span class="unit">V máx. objetivo</span></strong></div><div class="metric"><small>Corriente</small><strong>5 <span class="unit">A objetivo</span></strong></div></div></div>
+ </section>
+ <section id="module" class="hidden">
+  <button class="button secondary back" onclick="goHome()">← Inicio</button>
+  <div id="moduleContent"></div>
+ </section>
+ <div class="footer">SmartLab 3-in-1 Professional · prototipo de interfaz · sin conexión al hardware</div>
+</main>
+<script>
+const home=document.getElementById('home'), view=document.getElementById('module'), content=document.getElementById('moduleContent');
+function openModule(id){home.classList.add('hidden');view.classList.remove('hidden');let s='';
+if(id==='dmm') s=`<div class="panel"><h3>Multímetro · demo</h3><div class="metric-row"><div class="metric"><small>Tensión DC simulada</small><strong id="volt">5.02 <span class="unit">V</span></strong></div><div class="metric"><small>Corriente simulada</small><strong>0.18 <span class="unit">A</span></strong></div><div class="metric"><small>Resistencia simulada</small><strong>1.02 <span class="unit">kΩ</span></strong></div><div class="metric"><small>Continuidad</small><strong style="color:var(--cyan)">OK</strong></div></div><div class="actions"><button class="button" onclick="demoRefresh()">Actualizar demo</button><button class="button secondary" onclick="saveNote('Multímetro: '+document.getElementById('volt').innerText)">Guardar lectura</button></div></div>`;
+if(id==='scope') s=`<div class="panel"><h3>Osciloscopio · señal simulada</h3><canvas id="wave" width="700" height="220"></canvas><div class="metric-row" style="margin-top:10px"><div class="metric"><small>Frecuencia demo</small><strong>1.00 <span class="unit">kHz</span></strong></div><div class="metric"><small>Amplitud demo</small><strong>2.00 <span class="unit">Vpp</span></strong></div></div><label>Escala de tiempo</label><select><option>1 ms/div</option><option>500 µs/div</option><option>100 µs/div</option></select><div class="actions"><button class="button" onclick="drawWave()">Capturar demo</button><button class="button secondary" onclick="saveNote('Osciloscopio: captura de señal simulada')">Guardar captura</button></div></div>`;
+if(id==='gen') s=`<div class="panel"><h3>Generador · controles de demostración</h3><label>Forma de onda</label><select id="shape"><option>Senoidal</option><option>Cuadrada</option><option>Triangular</option></select><label>Frecuencia (Hz)</label><input id="freq" type="number" min="1" max="1000000" value="1000"><label>Amplitud (Vpp)</label><input id="amp" type="number" min="0" max="2" step=".1" value="1"><label>Offset (V)</label><input id="offset" type="number" min="-1" max="1" step=".1" value="0"><div class="actions"><button class="button" onclick="showGenerator()">Aplicar demo</button></div><p id="genresult" style="color:var(--muted);font-size:13px">Los controles no generan tensión física.</p></div>`;
+if(id==='logic') s=`<div class="panel"><h3>Analizador lógico · demo</h3><p style="color:var(--muted);font-size:13px">Estado digital ilustrativo; no procede de pines físicos.</p><div class="channels">${Array.from({length:8},(_,i)=>`<div class="channel"><b>CH${i}</b><span id="ch${i}">${i%3===0?'HIGH':'LOW'}</span></div>`).join('')}</div><div class="actions"><button class="button" onclick="toggleChannels()">Nueva captura demo</button><button class="button secondary" onclick="saveNote('Analizador lógico: estado simulado')">Guardar estado</button></div><div class="panel"><h3>Protocolos previstos</h3><p>UART · I²C · SPI — decodificación pendiente de integración con hardware.</p></div></div>`;
+if(id==='reports') s=`<div class="panel"><h3>Historial e informes</h3><label>Nota de prueba</label><input id="note" placeholder="Ej. prueba de continuidad en placa"><div class="actions"><button class="button" onclick="saveNote(document.getElementById('note').value||'Nota de prueba')">Guardar nota</button><button class="button secondary" onclick="exportReport()">Exportar informe .txt</button></div><div id="history" style="margin-top:14px;color:var(--muted);font-size:13px">Las notas guardadas durante esta sesión aparecerán aquí.</div></div>`;
+if(id==='connect') s=`<div class="panel"><h3>Conectividad</h3><div class="metric-row"><div class="metric"><small>Wi-Fi</small><strong style="font-size:18px">No conectado</strong></div><div class="metric"><small>USB-C</small><strong style="font-size:18px">No conectado</strong></div></div><p style="color:var(--muted);line-height:1.5">La interfaz funciona localmente como demostración. La conexión real necesitará firmware del dispositivo, protocolo de comunicación y pruebas de integración.</p><h3>Próximas integraciones</h3><p>1. Protocolo de comandos<br>2. Lecturas reales del DMM<br>3. Captura de muestras<br>4. Exportación PDF<br>5. Comunicación USB/Wi-Fi</p></div>`;
+content.innerHTML=s;
+if(id==='scope') drawWave();
+}
+function goHome(){view.classList.add('hidden');home.classList.remove('hidden')}
+function demoRefresh(){document.getElementById('volt').innerHTML=(4.8+Math.random()*.4).toFixed(2)+' <span class="unit">V</span>'}
+function drawWave(){const c=document.getElementById('wave');if(!c)return;const x=c.getContext('2d'),w=c.width,h=c.height;x.clearRect(0,0,w,h);x.strokeStyle='#1e3950';x.lineWidth=1;for(let i=0;i<=10;i++){x.beginPath();x.moveTo(i*w/10,0);x.lineTo(i*w/10,h);x.stroke()}for(let i=0;i<=8;i++){x.beginPath();x.moveTo(0,i*h/8);x.lineTo(w,i*h/8);x.stroke()}x.strokeStyle='#52e0d0';x.lineWidth=3;x.beginPath();for(let i=0;i<w;i++){let y=h/2-Math.sin(i/w*Math.PI*8)*h*.29;if(i===0)x.moveTo(i,y);else x.lineTo(i,y)}x.stroke()}
+function showGenerator(){const f=Number(document.getElementById('freq').value),a=Number(document.getElementById('amp').value),o=Number(document.getElementById('offset').value),sh=document.getElementById('shape').value;document.getElementById('genresult').textContent=`Configuración demo: ${sh}, ${f} Hz, ${a} Vpp, offset ${o} V. No se ha aplicado ninguna señal física.`}
+let notes=[];
+function saveNote(t){notes.push(new Date().toLocaleString()+' — '+t);const h=document.getElementById('history');if(h)h.innerHTML=notes.map(n=>'• '+escapeHtml(n)).join('<br>');alert('Guardado en la sesión de demostración.')}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function exportReport(){const txt='SmartLab 3-in-1 Professional — Informe DEMO\n\n'+(notes.length?notes.join('\n'):'No hay notas guardadas.')+'\n\nTodas las lecturas de esta versión son simuladas.';const b=new Blob([txt],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='SmartLab_demo_report.txt';a.click();URL.revokeObjectURL(u)}
+</script>
+</body></html>
